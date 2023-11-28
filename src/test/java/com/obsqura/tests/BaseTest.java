@@ -19,10 +19,13 @@ import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
 import com.obsqura.pages.ListProductPage;
 import com.obsqura.pages.LoginPage;
+import com.obsqura.pages.LoginPage1;
+import com.obsqura.pages.ManageCategoryPage;
 import com.obsqura.pages.ManageLocationPage;
 import com.obsqura.pages.ManagePaymentMethodsPage;
 import com.obsqura.pages.PushNotificationInformationPage;
-
+import com.obsqura.pages.PushNotificationInformationPage2;
+import com.obsqura.pages.SearchDeliveryBoyPage;
 import com.obsqura.utilities.TestProperties;
 
 public class BaseTest {
@@ -67,27 +70,38 @@ public class BaseTest {
 		return driver;
 	}
 
-	public LoginPage lp;
-	public HomePage hp;
-	public ExpenseCategoryPage ecp;
-	public ManagePaymentMethodsPage up;
-	public ListProductPage lpp;
-	public PushNotificationInformationPage pnp;
-	public ManageLocationPage mlp;
-	public  ContactUsPage cp;
+	public LoginPage loginpage;
+	public LoginPage1 loginpage1;
+	public HomePage homepage;
+	public ExpenseCategoryPage expensecategorypage;
+	public ManagePaymentMethodsPage managepaymentmethodpage;
+	public ListProductPage listproductpage;
+	public PushNotificationInformationPage pushnotificationinformationpage;
+	public PushNotificationInformationPage2 pushnotificationinformationpage2;
+	public ManageLocationPage managelocationpage;
+	public  ContactUsPage contactpage;
+	public ManageCategoryPage managecategorypage;
+	public SearchDeliveryBoyPage searchdeliveryboypage;
 	public void InitializePages() {
-		lp = new LoginPage(driver);
-		hp = new HomePage(driver);
-		ecp = new ExpenseCategoryPage(driver);
-		up = new ManagePaymentMethodsPage(driver);
-		lpp = new ListProductPage(driver);
-		pnp= new PushNotificationInformationPage(driver);
-		mlp= new ManageLocationPage(driver);
-		cp = new ContactUsPage(driver);
+		
+		loginpage = new LoginPage(driver);
+		loginpage1 = new LoginPage1(driver);
+		
+		homepage = new HomePage(driver);
+		expensecategorypage = new ExpenseCategoryPage(driver);
+		managepaymentmethodpage = new ManagePaymentMethodsPage(driver);
+		listproductpage = new ListProductPage(driver);
+		pushnotificationinformationpage= new PushNotificationInformationPage(driver);
+		pushnotificationinformationpage2= new PushNotificationInformationPage2(driver);
+		managelocationpage= new ManageLocationPage(driver);
+		managecategorypage= new  ManageCategoryPage(driver);
+		contactpage = new ContactUsPage(driver);
+		searchdeliveryboypage = new SearchDeliveryBoyPage(driver);
+		
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void TearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 }

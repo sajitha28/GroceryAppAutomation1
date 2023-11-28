@@ -23,6 +23,7 @@ import com.obsqura.constants.Constants;
 import com.obsqura.constants.WebDriverContext;
 
 
+
 public class PageUtility extends WaitUtility {
 	WebDriver driver;
 	WebDriverWait wait;
@@ -69,15 +70,29 @@ public class PageUtility extends WaitUtility {
 		element.clear();
 		element.sendKeys(value);
 	}
+	/*public void SetTextBox2(WebElement element, String value) {
+		element.clear();
+		element.sendKeys(value);
+	}*/
+	
+	/*public void SetTextBox(WebElement element, CharSequence[] num)
+	{
+		element.sendKeys(num);
+	}*/
 
 	public String GetElemenText(WebElement element) {
 		return element.getText();
 	}
+	public void uploadFile(WebElement element)
+	{
+	}
+	
 
 	public void AcceptAlert() {
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 	}
+	
 	
 	public static String getScreenshot() throws IOException {
 		TakesScreenshot scrshot=(TakesScreenshot)WebDriverContext.getDriver();
@@ -87,8 +102,8 @@ public class PageUtility extends WaitUtility {
 		FileUtils.copyFile(srcfile, destfile);
 		return path;
 	}
-	public void uploadFile(By locator, String fileToUpload) throws AWTException {
-		driver.findElement(locator).click();
+	public void uploadFile(WebElement locator, String fileToUpload) throws AWTException {
+		driver.findElement((By) locator).click();
 
 	     //put path to your image in a clipboard
 	     StringSelection ss = new StringSelection(fileToUpload);
@@ -106,5 +121,10 @@ public class PageUtility extends WaitUtility {
 	     robot.keyPress(KeyEvent.VK_ENTER);
 	     robot.delay(90);
 	     robot.keyRelease(KeyEvent.VK_ENTER);
+	}
+
+	public static void uploadFile(By locator, String path) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -15,17 +15,17 @@ package com.obsqura.tests;
 		@Test
 		public void ListLocation ()
 		{
-			lp.Login();
-			hp.NavigateToManageLocationSection();
+			loginpage.Login();
+			homepage.NavigateToManageLocationSection();
 			//String currentDate= DateUtility.getCurrentDate();
 			//String currentDate= DateUtility.getCurrentDate();
-			String alertMsg = mlp.SearchRegion();
+			String alertMsg = managelocationpage.SearchRegion();
 		
 			
 			/**
 			 * Validation forLocation  Creation
 			 */
-			Assert.assertEquals(alertMsg, "Alert!", "Location Created Successfully");
+			Assert.assertEquals(alertMsg, "Location Created Successfully", "Alert!");
 			
 	}
 

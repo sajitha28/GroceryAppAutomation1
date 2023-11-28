@@ -6,5 +6,8 @@ public class Constants {
 	public static final String projectPath = System.getProperty("user.dir");
 	public static final String configfilePath= projectPath+"\\src\\main\\resources\\Configurations\\config.properties";
 	public static final String SCREENSHOTPATH = projectPath+"\\Reports\\screenshot.png";
-	public static final String EXCEL_FILE_PATH= projectPath+"\\src\\test\\resources\\testData\\dataSheet.xlsx";
+	public static final String EXCEL_FILE_PATH= projectPath+"\\src\\test\\resources\\dataSheet.xlsx";
+	public static final String EXCEL_FILE_PATH2= projectPath+"\\src\\test\\resources\\Book4_Login.xlsx";
+	public static final String LOGIN_PATH=projectPath+"\\src\\test\\resources\\LoginPath.xlsx";
+	//public static String EXCEL_FILE_PATH2;
 }
