@@ -31,7 +31,6 @@ public class ReportListeners implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 	test.log(Status.PASS, result.getMethod().getMethodName()+" is Passed");
 	}
-
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());

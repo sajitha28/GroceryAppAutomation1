@@ -12,10 +12,12 @@ public class SearchProductTest extends BaseTest {
 
 	@Test(groups="Smoke")
 	public void SearchProduct() throws IOException {
-		lp.Login();
-		hp.NavigateToManageProductSection();
-		lpp.SearchProduct(GetProductName());
-		String actualName = lpp.validateProductExists();
+		loginpage.Login();
+		homepage.NavigateToManageProductSection();
+		listproductpage.SearchProduct(GetProductName());
+		System.out.println(GetProductName());
+		String actualName = listproductpage.validateProductExists();
+		System.out.println(actualName);
 		/**
 		 * Validation
 		 */

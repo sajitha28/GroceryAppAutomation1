@@ -9,8 +9,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void MyLoginTest() {
-		lp.Login();
-		hp.NavigateToManagePaymentSection();
+		loginpage.Login();
+		homepage.NavigateToManagePaymentSection();
 	
 	}
 
